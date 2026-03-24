@@ -24,11 +24,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.zIndex
 import coil3.compose.rememberAsyncImagePainter
 import com.ss.learningfromudemy.home.models.Product
 import com.ss.learningfromudemy.ui.theme.PrimaryColor
@@ -37,24 +35,23 @@ import com.ss.learningfromudemy.ui.theme.PrimaryColor
 fun FeaturedProductCard(product: Product, onProductClick: () -> Unit) {
     Card(
         onClick = onProductClick,
-        modifier = Modifier.width(280.dp),
+        modifier = Modifier.width(200.dp),
         shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(4.dp)
+        elevation = CardDefaults.cardElevation(4.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White)
     ) {
         Box {
             DiscountBadge(
                 discountPrice = 5,
                 modifier = Modifier
                     .align(Alignment.TopStart)
-                    .padding(8.dp)
-                    .zIndex(2f)
             )
         }
 
         Column(
             modifier = Modifier
                 .padding(16.dp)
-                .zIndex(1f)
         ) {
             Image(
                 painter = rememberAsyncImagePainter(product.image),
@@ -62,14 +59,15 @@ fun FeaturedProductCard(product: Product, onProductClick: () -> Unit) {
                     .fillMaxWidth()
                     .height(150.dp),
                 contentScale = ContentScale.Fit,
-                contentDescription = "Product Image",
-                colorFilter = ColorFilter.tint(Color.White)
+                contentDescription = "Product Image"
             )
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = product.name,
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    color = Color.DarkGray
+                ),
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1
             )
@@ -77,24 +75,29 @@ fun FeaturedProductCard(product: Product, onProductClick: () -> Unit) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = "$${product.price}",
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    style = MaterialTheme.typography.bodyMedium.copy(
+                        color = Color.DarkGray
+                    )
                 )
             }
 
             Row(horizontalArrangement = Arrangement.Absolute.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = {}) {
-                    Icon(
-                        imageVector = Icons.Default.Favorite,
-                        contentDescription = "Favorite",
-                        tint = PrimaryColor,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(Modifier.width(4.dp))
+                Icon(
+                    imageVector = Icons.Default.Favorite,
+                    contentDescription = "Favorite",
+                    tint = PrimaryColor,
+                    modifier = Modifier.size(16.dp)
+                )
+                Spacer(Modifier.width(4.dp))
 
-                    Text(text = product.id, style = MaterialTheme.typography.bodySmall)
-                }
+                  }
+
+                Text(text = product.id, style = MaterialTheme.typography.bodySmall.copy(
+                    color = Color.DarkGray
+                ))
+
             }
 
         }

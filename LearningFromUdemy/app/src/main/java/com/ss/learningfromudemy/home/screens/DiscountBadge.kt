@@ -17,10 +17,10 @@ fun DiscountBadge(discountPrice: Int, modifier: Modifier = Modifier) {
     Box(modifier = Modifier.clip(RoundedCornerShape(4.dp))
         .background(Color(0xFFE91e63)))
     {
-     Text (text = "$discountPrice% OFF",
+     Text (text = "$discountPrice% Off",
          modifier = modifier.padding(
              horizontal = 8.dp,
-             vertical = 4.dp
+             vertical = 2.dp
          ),
          color = Color.White,
          fontWeight = FontWeight.Bold

@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ss.learningfromudemy.home.models.Category
 import com.ss.learningfromudemy.home.models.Product
-import com.ss.learningfromudemy.home.screens.CategoryChip
 
 @Preview(showBackground = true)
 @Composable
@@ -65,7 +64,7 @@ fun HomeScreen() {
                 Category(
                     id = 3,
                     name = "Cloth",
-                    image = "https://cdn-icons-png.flaticon.com/512/5968/5968864.png",
+                    image = "https://image.pngaaa.com/404/1144404-middle.png",
                     description = "This is a Clothes"
                 )
             )
@@ -74,7 +73,7 @@ fun HomeScreen() {
                 Product(
                     id = "product_one",
                     name = "Product 1",
-                    image = "https://cdn-icons-png.flaticon.com/512/5968/5968864.png",
+                    image = "https://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg",
                     description = "This is product one",
                     price = 500.04,
                     categoryId = 0
@@ -82,7 +81,7 @@ fun HomeScreen() {
                 Product(
                     id = "product_two",
                     name = "Product 2",
-                    image = "https://cdn-icons-png.flaticon.com/512/5968/5968864.png",
+                    image = "https://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg",
                     description = "This is product two",
                     price = 700.00,
                     categoryId = 1
@@ -90,7 +89,7 @@ fun HomeScreen() {
                 Product(
                     id = "product_three",
                     name = "Product 3",
-                    image = "https://cdn-icons-png.flaticon.com/512/5968/5968864.png",
+                    image = "https://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg",
                     description = "This is product three",
                     price = 600.04,
                     categoryId = 2
@@ -98,7 +97,7 @@ fun HomeScreen() {
                 Product(
                     id = "product_four",
                     name = "Product 4",
-                    image = "https://cdn-icons-png.flaticon.com/512/5968/5968864.png",
+                    image = "https://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg",
                     description = "This is product four",
                     price = 999.00,
                     categoryId = 3

@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -60,7 +59,10 @@ fun SearchBar(
                     disabledContainerColor = Color.Transparent,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    disabledIndicatorColor = Color.Transparent
+                    disabledIndicatorColor = Color.Transparent,
+                    focusedTextColor = Color.Black,
+                    unfocusedTextColor = Color.Black,
+                    disabledTextColor = Color.Black
                 ),
                 keyboardActions = KeyboardActions(
                     onSearch = {
